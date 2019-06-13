@@ -16,8 +16,14 @@ define('APP_NAME', 'RESTful API Template (Flight PHP)');
 
 define('ROOT_DIR', realpath(__DIR__));
 define('APP_DIR', ROOT_DIR . '/app');
-define('API_DIR', APP_DIR . '/api');
+//define('API_DIR', APP_DIR . '/api');
 define('CONFIG_DIR', APP_DIR . '/config');
+
+const API_DIR = [
+    APP_DIR . '/api',
+    APP_DIR . '/api/v00'//,
+    //APP_DIR . '/api/v01' - future version
+];
 
 /*
  * Server Host URL
@@ -32,7 +38,7 @@ require 'flight/Flight.php';
 /*
  * Load other dependency libraries
  */
-require 'vendor/autoload.php';
+//require 'vendor/autoload.php';
 
 /*
  *  load server environment

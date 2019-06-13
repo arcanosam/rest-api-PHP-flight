@@ -1,6 +1,16 @@
 <?php
 
+namespace v00;
+
 (defined('APP_NAME')) or exit('Forbidden 403');
+
+use \BaseClass;
+use \Common_DateUtil;
+use \Model_User;
+use \Model_UserLoginSession;
+use \Model_CacheKey;
+use \System_ApiException;
+use \ResultCode;
 
 /**
  * Description of UserLogin.

@@ -27,19 +27,19 @@ if (!isset($argv)) {
     });
 
     // Set route for all GET query request from client
-    Flight::route('GET /api/@name', array('Controller', 'initGet'));
+    Flight::route('GET /@api_version/@resource_name', array('Controller', 'initGet'));
 
     // Set route for all POST query request from client
-    Flight::route('POST /api/@name', array('Controller', 'initPost'));
+    Flight::route('POST /@api_version/@resource_name', array('Controller', 'initPost'));
 
     // Set route for all PUT query request from client
-    Flight::route('PUT /api/@name', array('Controller', 'initPut'));
+    Flight::route('PUT /@api_version/@resource_name', array('Controller', 'initPut'));
 
     // Set route for all PATCH query request from client
-    Flight::route('PATCH /api/@name', array('Controller', 'initPatch'));
+    Flight::route('PATCH /@api_version/@resource_name', array('Controller', 'initPatch'));
 
     // Set route for all DELETE query request from client
-    Flight::route('DELETE /api/@name', array('Controller', 'initDelete'));
+    Flight::route('DELETE /@api_version/@resource_name', array('Controller', 'initDelete'));
 
     /*
      * Image path is masked in API response

@@ -2,6 +2,31 @@
 Change Log
 ##########
 
+Dev. Changes
+=============
+
+- API Versioning implementation
+    - index.php
+        - adding an array of directories each an API version
+            - allowing to organize the api versioning in folders
+    - create folder api/v00 and api/v01
+        - moving just the php modules which implement resources
+    - route.php
+        - change URLs to accept an api version as named parameter  
+        - modifying the 'name' parameter to resource_name for legibility
+    - Controller.php
+        - adding api version as named parameter
+        - concatenate this new parameter with the resource requested
+            - create a unique namespace to load
+    - UserLogin.php
+        - defining namespace for API Versioning
+        - adding all Global Namespaces used for this class
+               
+- TODO
+    - Fix all others resources
+    - Allow use of Database Postgres
+    - Set JWT AUTH as default
+
 Version 2.0.0
 =============
 

@@ -32,11 +32,11 @@ class Controller {
      * @param string $name   REST API name
      * @param string $method Application request Method
      */
-    public static function init($name, $method) {
+    public static function init($api_version, $resource_name, $method) {
         $data = null;
 
         try {
-            self::$apiName = Common_Utils::camelize($name); // prepare api controller from request url call
+            self::$apiName = $api_version."\\".(string)Common_Utils::camelize($resource_name); // prepare api controller from request url call
             self::$getParams = $_GET;
             self::$headers = getallheaders();
 
@@ -56,7 +56,7 @@ class Controller {
 
             // Check if requested API controller exist in server
             if (!class_exists(self::$apiName)) {
-                throw new System_ApiException(ResultCode::UNKNOWN_ERROR, 'No such api: '.$name);
+                throw new System_ApiException(ResultCode::UNKNOWN_ERROR, 'No such api: '.$resource_name);
             }
 
             /**
@@ -149,45 +149,45 @@ class Controller {
     /**
      * Initialize application for GET method.
      *
-     * @param type $name Api name
+     * @param type $resource_name Api name
      */
-    public static function initGet($name) {
-        self::init($name, 'GET');
+    public static function initGet($api_version, $resource_name) {
+        self::init($api_version, $resource_name, 'GET');
     }
 
     /**
      * Initialize application for POST method.
      *
-     * @param type $name Api name
+     * @param type $resource_name Api name
      */
-    public static function initPost($name) {
-        self::init($name, 'POST');
+    public static function initPost($api_version, $resource_name) {
+        self::init($api_version, $resource_name, 'POST');
     }
 
     /**
      * Initialize application for PUT method.
      *
-     * @param type $name Api name
+     * @param type $resource_name Api name
      */
-    public static function initPut($name) {
-        self::init($name, 'PUT');
+    public static function initPut($api_version, $resource_name) {
+        self::init($api_version, $resource_name, 'PUT');
     }
 
     /**
      * Initialize application for PATCH method.
      *
-     * @param type $name Api name
+     * @param type $resource_name Api name
      */
-    public static function initPatch($name) {
-        self::init($name, 'PATCH');
+    public static function initPatch($api_version, $resource_name) {
+        self::init($api_version, $resource_name, 'PATCH');
     }
 
     /**
      * Initialize application for DELETE method.
      *
-     * @param type $name Api name
+     * @param type $resource_name Api name
      */
-    public static function initDelete($name) {
-        self::init($name, 'DELETE');
+    public static function initDelete($api_version, $resource_name) {
+        self::init($api_version, $resource_name, 'DELETE');
     }
 }
