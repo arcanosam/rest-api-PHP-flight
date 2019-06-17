@@ -1,6 +1,15 @@
 <?php
 
+namespace v00;
+
 (defined('APP_NAME')) or exit('Forbidden 403');
+
+use \BaseClass;
+use \Config_Config;
+use \Const_Application;
+use \System_JwtToken;
+use \ResultCode;
+use \Common_DateUtil;
 
 /**
  * Description of Test.

@@ -21,11 +21,18 @@ Dev. Changes
     - UserLogin.php
         - defining namespace for API Versioning
         - adding all Global Namespaces used for this class
+    - Config.ini 
+        - JWT Token auth enabled
+            - composer required to install Firebase JWT
+    - jwtToken.php
+        - Adding namespace Firebase\JWT\JWT
+    - Test.php
+        - fixed
                
 - TODO
     - Fix all others resources
     - Allow use of Database Postgres
-    - Set JWT AUTH as default
+    - Implement JWT generation and validation
 
 Version 2.0.0
 =============

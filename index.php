@@ -38,7 +38,7 @@ require 'flight/Flight.php';
 /*
  * Load other dependency libraries
  */
-//require 'vendor/autoload.php';
+require 'vendor/autoload.php';
 
 /*
  *  load server environment
